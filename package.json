@@ -1,0 +1,25 @@
+{
+  "name": "picsta",
+  "version": "1.0.0",
+  "description": "This is a custom boilerplate to kickstart\r app development using node, passport, sequelize\r using express-HBS and on MVC architecture",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pg07codes/app-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pg07codes/app-boilerplate/issues"
+  },
+  "homepage": "https://github.com/pg07codes/app-boilerplate#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-hbs": "^1.0.4"
+  }
+}
