@@ -9,10 +9,13 @@
 #signin {
     width: 100%;
     height:60px;
-    background: aliceblue;
+    background: #1d2124 ;
     padding:10px;
     box-shadow: 8px 3px 3px black;
+    opacity: 0.96;
 }
+#signin:hover{opacity: 1;}
+#signup:hover{opacity: 1;}
 .f_g{
     display: inline-block;
 }
@@ -20,11 +23,12 @@
     width:482px;
     height:480px;
     margin:50px 10px;
-    background: aliceblue;
+    background: #1d2124;
     border: solid black 2px;
     box-shadow: 3px 3px 3px black;
     padding:35px;
     border-radius: 10px;
+    opacity: 0.96;
 }
 .mainpage{
     margin-top:75px;
@@ -40,4 +44,8 @@
 .chat{
     height:580px;
     background:red;
+}
+label{
+    font-weight: bold;
+    color: white;
 }
