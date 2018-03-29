@@ -25,3 +25,13 @@
     box-shadow: 3px 3px 3px black;
     padding:35px;
 }
+.nav_bar{
+
+    padding: 5px;
+}
+.nav_el{
+    font-size: 25px;
+    font-weight: lighter;
+    letter-spacing: 5px;
+    color: black;
+}

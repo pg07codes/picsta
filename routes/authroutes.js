@@ -12,13 +12,23 @@ router.post("/signup",(r,s)=>{
 })
 
 router.get("/logout",(r,s)=>{
-    r.logout()
-    r.session.destroy()
+    if(r.isAuthenticated()) {
+        r.logout()
+        r.session.destroy()
+        s.redirect("/")
+    }
+    else
     s.redirect("/")
 })
 
 router.get("/profile",(r,s)=>{
-    let id=r.user.id
-    s.redirect(`/profile/:${id}`)
+    if(r.isAuthenticated()){
+        let id=r.user.id
+        s.redirect(`/profile/:${id}`)
+    }
+    else
+    s.redirect("/")
 })
+
+
 module.exports=router

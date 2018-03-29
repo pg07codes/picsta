@@ -35,7 +35,11 @@ app.engine("hbs",hbs.express4({
 
 //home route
 app.get("/",(r,s)=>{
-    s.render('home',{title:"picsta: HOME"})
+    if(r.isAuthenticated())
+        s.redirect("/auth/profile")
+    else
+        s.render('home',{title:"picsta: HOME"})
+
 })
 
 app.use("/auth",require("./routes/authroutes"))
