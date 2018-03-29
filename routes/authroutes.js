@@ -24,7 +24,7 @@ router.get("/logout",(r,s)=>{
 router.get("/profile",(r,s)=>{
     if(r.isAuthenticated()){
         let id=r.user.id
-        s.redirect(`/profile/:${id}`)
+        s.redirect(`/profile/${id}`)
     }
     else
     s.redirect("/")
