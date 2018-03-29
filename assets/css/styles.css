@@ -26,3 +26,18 @@
     padding:35px;
     border-radius: 10px;
 }
+.mainpage{
+    margin-top:75px;
+}
+.options{
+    height:580px;
+    background: green;
+}
+.feed{
+    height:10000px;
+    background: blue;
+}
+.chat{
+    height:580px;
+    background:red;
+}
