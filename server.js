@@ -2,14 +2,26 @@
 const express = require("express")
 const path = require("path")
 const hbs=require("express-hbs")
+const passport=require("./passport")
+const session=require("express-session")
 const app = express()
 
 
 //serving files and parsing request body
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use("/assets", express.static(path.join(__dirname, "assets")))
 
+
+app.use(session({
+    secret:"jb;akjabj;ajdklf",
+    resave:false,
+    saveUninitialized:false
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
+
+app.use("/assets", express.static(path.join(__dirname, "assets")))
 
 //setting up of the view engine
 app.set("view engine","hbs")
@@ -23,8 +35,15 @@ app.engine("hbs",hbs.express4({
 
 //home route
 app.get("/",(r,s)=>{
-    s.send("home page")
+    s.render('home',{title:"picsta: HOME"})
 })
+
+app.use("/auth",require("./routes/authroutes"))
+app.use("/profile",require("./routes/profileroutes"))
+
+
+
+
 
 //server starts listening
 app.listen(8888, () =>

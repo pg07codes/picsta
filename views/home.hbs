@@ -1,0 +1,38 @@
+<div class="container-fluid home">
+    <div id="signin">
+
+        <form id="form" method="post" action="/auth/signin">
+            <div class="form-group f_g">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group f_g">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-outline-success">Sign in</button>
+        </form>
+
+    </div>
+    <div id="signup">
+<h2 style="font-weight: bold; font-size: 35px; text-align: center">SIGN UP FOR FREE !!!</h2>
+        <form method="post" action="/auth/signup">
+            <label for="name">Name</label>
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Your name">
+            </div>
+            <label for="email">Email Address</label>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter email">
+            </div>
+            <label for="password">Password</label>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <label for="cpassword">Confirm Password</label>
+            <div class="form-group">
+                <input type="password" name="cpassword" class="form-control" id="cpassword" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-success">Register</button>
+        </form>
+    </div>
+</div>
+

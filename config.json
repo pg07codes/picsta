@@ -1,7 +1,7 @@
 {
 "DB":{
-  "NAME":"",
-  "USER":"",
-  "PASSWORD":""
+  "NAME":"testdb",
+  "USER":"testuser",
+  "PASSWORD":"pass"
 }
 }
