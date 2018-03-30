@@ -14,9 +14,7 @@ post.create({
     findpixta:function(r,s){
         post.findAll(
             {
-                where:{
-                    userId:r.user.id
-                }
+                order: [['updatedAt', 'DESC']]
             }
         ).then((d)=>{s.send(d)})
     },

@@ -35,27 +35,30 @@
     color: white;
 }
 #menu{
-    width:300px;
+    width:260px;
     height:560px;
     background: #005cbf;
     border-radius: 5px;
     border: solid 1px  black;
+    margin-left: 5px;
+    margin-top: 5px;
 }
 #menu .btn{
     border:0 solid transparent;
 }
 .menu_el{
-    margin:20px 12px;
-    font-size: 25px !important;
+    margin:18px 10px;
+    font-size: 20px !important;
     letter-spacing: 4px;
 }
 #menu-toggler{
-    width:300px;
-    height:75px;
+    width:260px;
+    height:50px;
     background: deepskyblue;
     border-radius: 10px;
     border: solid 1px  black;
-
+    margin-top: 25px;
+    margin-left:5px;
 }
 #menu-toggler:hover{
     opacity: 0.7;
@@ -63,12 +66,12 @@
 }
 #menu-toggler:hover h1{
     font-weight: normal;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     color: white;
 }
 #menu-toggler h1{
     text-align: center;
-    font-size: 50px;
+    font-size: 35px;
     color: black;
     font-weight: lighter;
     transition: letter-spacing 0.65s;
@@ -79,11 +82,14 @@
     background: url("/assets/images/profilebg.jpg") repeat-y;
 }
 .feed{
-    margin-top: 80px;
+    margin-top: 25px;
 }
 #error{
 position:fixed;
     top:-15px;
     right:20px;
 
+}
+.pixtafeed{
+    margin:25px 5px;
 }

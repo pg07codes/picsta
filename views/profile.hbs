@@ -8,7 +8,7 @@
             <form class="row" method="post" action="/profile/postpixta">
 
                 <div class="form-group col-md-7">
-                <textarea name="post" class="form-control"placeholder="share a pixta..." rows="4"></textarea>
+                <textarea name="post" class="form-control" placeholder="Share a pixta..." rows="4"></textarea>
                 </div>
 
                 <div class="col-md-2">
@@ -30,6 +30,16 @@
 </div>
 <script>
     $.get(`/profile/{{id}}/getpixta`,(data)=>{
-        console.log(data)
+        for(i=0; i<data.length;i++)
+        $("#pixtafeeds").append(`
+        <div class="card pixtafeed" style="width:35rem;">
+  <div class="card-body">
+    <p class="card-text" style="font-size: 18px;">${data[i].post}</p>
+    <p class="card-text"><strong><:>POSTED BY:${data[i].post}</strong></p>
+    <p class="card-text"><strong><:>POSTED ON:${data[i].createdAt.split("T")[0]}</strong></p>
+    <a href="#" class="btn btn-outline-danger">LIKE</a>
+    <a href="#" class="btn btn-outline-success">Comment</a>
+  </div>
+</div>`)
     })
 </script>
