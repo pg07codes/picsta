@@ -1,0 +1,22 @@
+<div id="menu-toggler">
+
+</div>
+
+
+<div id="menu">
+
+    <a href="/auth/profile"><button class="btn btn-outline-dark btn-lg menu_el">HOME</button></a><br>
+    <a href="#"><button class="btn btn-outline-dark btn-lg menu_el">MY PIXTAS</button></a><br>
+    <a href="#"><button class="btn btn-outline-dark btn-lg menu_el">LIKED PIXTAS</button></a><br>
+    <a href="#"><button class="btn btn-outline-dark btn-lg menu_el">PIXTA BUDDIES</button></a><br>
+    <a href="#"><button class="btn btn-outline-dark btn-lg menu_el">SETTINGS</button></a><br>
+    <a href="/auth/logout"><button class="btn btn-outline-dark btn-lg menu_el">LOGOUT</button></a>
+
+</div>
+
+<script>
+    $("#menu").hide()
+    $("#menu-toggler").click(function(){
+$("#menu").toggle(800)
+    })
+</script>
