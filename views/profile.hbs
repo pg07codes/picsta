@@ -7,17 +7,17 @@
 
             <form class="row" method="post" action="/profile/postpixta">
 
-                <div class="form-group col-md-7">
+                <div class="form-group col-md-8">
                 <textarea name="post" class="form-control" placeholder="Share a pixta..." rows="4"></textarea>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <button type="submit" class="btn btn-outline-dark btn-lg">POST</button>
                 </div>
 
             </form>
                 <div class="row">
-                    <div class="col-md-7" id="pixtafeeds">
+                    <div class="col-md-8" id="pixtafeeds">
 
                         <!--here all the pixta feeds will come-->
 
@@ -29,17 +29,29 @@
 
 </div>
 <script>
+    function liked(pid){
+        $.post(`/profile/{{id}}/like/${pid}`,(data)=>{
+            $(".like").toggleClass("btn-outline-danger")
+            console.log(data)
+        })
+    }
+    $.get(`/profile/{{id}}/getlikes`,(d)=>{
+        console.log(d)
+    })
     $.get(`/profile/{{id}}/getpixta`,(data)=>{
         for(i=0; i<data.length;i++)
+        {
+            var pid=data[i].postid
         $("#pixtafeeds").append(`
-        <div class="card pixtafeed" style="width:35rem;">
+        <div class="card pixtafeed" style="width:40rem;">
   <div class="card-body">
     <p class="card-text" style="font-size: 18px;">${data[i].post}</p>
-    <p class="card-text"><strong style="text-decoration: underline;margin:3px;">POSTED BY :</strong>${data[i].post}</p>
+    <p class="card-text"><strong style="text-decoration: underline;margin:3px;">POSTED BY :</strong>${data[i].user.name}</p>
     <p class="card-text"><strong style="text-decoration: underline;margin:3px;">POSTED ON :</strong>${data[i].createdAt.split("T")[0]}</p>
-    <a href="#" class="btn btn-outline-danger">LIKE</a>
+    <a onclick="liked(${pid})" class="btn btn-outline-danger btn-danger like">LIKE</a>
     <a href="#" class="btn btn-outline-success">Comment</a>
   </div>
 </div>`)
-    })
+    }})
+
 </script>

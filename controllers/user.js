@@ -16,5 +16,5 @@ module.exports={
         else{
             s.redirect("/?eup=true")
         }
-    },
+    }
 }

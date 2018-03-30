@@ -40,6 +40,16 @@ const post=db.define("post",{
         type:dt.STRING
     }
 })
+const like=db.define("like",{
+    postid:{
+        allowNull:false,
+        type:dt.INTEGER
+    },
+    userid:{
+        allowNull:false,
+        type:dt.INTEGER
+    }
+})
 
 user.hasMany(post)
 post.belongsTo(user)
@@ -47,4 +57,4 @@ post.belongsTo(user)
 db.sync().then(()=>console.log("db is synced"))
 
 
-module.exports={db,user,post}
+module.exports={db,user,post,like}

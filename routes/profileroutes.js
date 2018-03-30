@@ -1,6 +1,8 @@
 const router=require('express').Router()
 const insertpixta=require("../controllers/post").insertpixta
 const findpixta=require("../controllers/post").findpixta
+const liked=require("../controllers/post").liked
+const findlikes=require("../controllers/post").findlikes
 
 router.get("/:id",(r,s)=>{
     if(r.isAuthenticated()) {
@@ -29,4 +31,23 @@ router.get("/:id/getpixta",(r,s)=>{
     else
         s.redirect("/")
 })
+
+router.get("/:id/getlikes",(r,s)=>{
+    if(r.isAuthenticated())
+        findlikes(r,s)
+    else
+        s.redirect("/")
+})
+router.get("/",(r,s)=>{
+    if(r.isAuthenticated()){
+        s.redirect(`/profile/${r.user.id}`)
+    }
+    else
+        s.redirect("/")
+})
+
+router.post("/:uid/like/:pid",(r,s)=>{
+    liked(r,s)
+})
+
 module.exports=router
