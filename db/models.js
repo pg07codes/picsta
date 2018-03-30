@@ -44,7 +44,7 @@ const post=db.define("post",{
 user.hasMany(post)
 post.belongsTo(user)
 
-db.sync({force:true}).then(()=>console.log("db is synced"))
+db.sync().then(()=>console.log("db is synced"))
 
 
 module.exports={db,user,post}
