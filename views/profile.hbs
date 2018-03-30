@@ -35,8 +35,8 @@
         <div class="card pixtafeed" style="width:35rem;">
   <div class="card-body">
     <p class="card-text" style="font-size: 18px;">${data[i].post}</p>
-    <p class="card-text"><strong><:>POSTED BY:${data[i].post}</strong></p>
-    <p class="card-text"><strong><:>POSTED ON:${data[i].createdAt.split("T")[0]}</strong></p>
+    <p class="card-text"><strong style="text-decoration: underline;margin:3px;">POSTED BY :</strong>${data[i].post}</p>
+    <p class="card-text"><strong style="text-decoration: underline;margin:3px;">POSTED ON :</strong>${data[i].createdAt.split("T")[0]}</p>
     <a href="#" class="btn btn-outline-danger">LIKE</a>
     <a href="#" class="btn btn-outline-success">Comment</a>
   </div>
