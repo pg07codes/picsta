@@ -29,8 +29,22 @@ const user=db.define("user",{
     }
 })
 
+const post=db.define("post",{
+    postid:{
+        autoIncrement:true,
+        primaryKey:true,
+        type:dt.INTEGER
+    },
+    post:{
+        allowNull:false,
+        type:dt.STRING
+    }
+})
 
-db.sync().then(()=>console.log("db is synced"))
+user.hasMany(post)
+post.belongsTo(user)
+
+db.sync({force:true}).then(()=>console.log("db is synced"))
 
 
-module.exports={db,user}
+module.exports={db,user,post}
