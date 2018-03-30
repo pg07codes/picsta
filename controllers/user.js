@@ -10,7 +10,7 @@ module.exports={
                 email:r.body.email,
                 password:r.body.password
             }).then((user)=>{
-                s.redirect(`/profile/:${user.id}`)
+                s.redirect(`/?signedup=true`)
             })
         }
         else{

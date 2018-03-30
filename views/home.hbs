@@ -35,4 +35,35 @@
         </form>
     </div>
 </div>
+<div id="error">
+
+</div>
+<script>
+    if(document.URL==="http://localhost:8888/?ein=true"){
+        var e=document.URL.split("?")[1].split("=")[1]
+    if(e==="true"){
+        console.log(e)
+        $("#error").append(`<div class="alert alert-danger" style="width:400px; margin:20px auto;" role="alert">
+                                    Invalid credentials ! Try again or Register now.
+                            </div>`)
+    }}
+    else if(document.URL==="http://localhost:8888/?eup=true"){
+        var e=document.URL.split("?")[1].split("=")[1]
+        if(e==="true"){
+            console.log(e)
+            $("#error").append(`<div class="alert alert-danger" style="width:400px; margin:20px auto;" role="alert">
+                                   Passwords do not match! Try again!!
+                            </div>`)
+        }
+    }
+    else if(document.URL==="http://localhost:8888/?signedup=true"){
+        var e=document.URL.split("?")[1].split("=")[1]
+        if(e==="true"){
+            console.log(e)
+            $("#error").append(`<div class="alert alert-success" style="width:400px; margin:20px auto;" role="alert">
+                                   You have been registered succesfully.
+                            </div>`)
+        }
+    }
+</script>
 

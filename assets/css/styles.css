@@ -81,3 +81,9 @@
 .feed{
     margin-top: 80px;
 }
+#error{
+position:fixed;
+    top:-15px;
+    right:20px;
+
+}

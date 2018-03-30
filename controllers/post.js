@@ -12,7 +12,7 @@ post.create({
 })
     },
     findpixta:function(r,s){
-        post.find(
+        post.findAll(
             {
                 where:{
                     userId:r.user.id
